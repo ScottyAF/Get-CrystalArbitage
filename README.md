@@ -137,17 +137,6 @@ The scanner uses 16 parallel threads and makes roughly 80–120 total requests p
 
 ---
 
-## Contributing
-
-Pull requests welcome. Some areas that could use improvement:
-
-- HQ item support (currently NQ only)
-- Multi-datacenter support (Aether, Primal, etc.)
-- Price history charts per item
-- Notification/alert mode for specific items
-
----
-
 ## Disclaimer
 
 This tool queries publicly available market board data via the Universalis crowdsourced API. It does not interact with the Final Fantasy XIV game client, inject into any process, or violate the FFXIV Terms of Service. All data is read-only and sourced from player-submitted market board snapshots.
