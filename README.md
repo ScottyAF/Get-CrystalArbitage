@@ -33,15 +33,20 @@ A PowerShell WPF desktop application for finding cross-world market board arbitr
 ---
 
 ## Installation
-
+ 
+1. Download **[Get-CrystalArbitrage-GUI.ps1](https://raw.githubusercontent.com/YOUR_USERNAME/ffxiv-crystal-arbitrage/main/Get-CrystalArbitrage-GUI.ps1)** from this repository
+2. Windows marks files downloaded from the internet as blocked. Unblock it before running:
 ```powershell
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/ffxiv-crystal-arbitrage.git
-cd ffxiv-crystal-arbitrage
-
-# Allow local script execution if needed (run once)
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Unblock-File -Path .\Get-CrystalArbitrage-GUI.ps1
 ```
+ 
+> **Where to find this:** Open PowerShell, navigate to your Downloads folder (`cd ~\Downloads`), then run the command above. You only need to do this once.
+ 
+> **Alternatively:** Right-click the `.ps1` file → Properties → check **Unblock** at the bottom → OK.
+ 
+3. If you've never run a local PowerShell script before, you may also need to set the execution policy once:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ---
 
