@@ -24,9 +24,12 @@ A PowerShell WPF desktop application for finding cross-world market board arbitr
 ---
 
 ## Requirements
-
-- **Windows** (WPF requires Windows)
-- **PowerShell 7.0+** — [Download here](https://github.com/PowerShell/PowerShell/releases)
+ 
+- **Windows**
+- **PowerShell 7.0+** — install via Windows Package Manager:
+```powershell
+  winget install Microsoft.PowerShell
+```
 - Internet connection to reach [universalis.app](https://universalis.app), [v2.xivapi.com](https://v2.xivapi.com), and [garlandtools.org](https://www.garlandtools.org)
 - No API key required — all APIs used are free and public
 
