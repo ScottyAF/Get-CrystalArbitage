@@ -6,7 +6,7 @@ A PowerShell WPF desktop application for finding cross-world market board arbitr
 
 ## Screenshots
 
-> _Dark themed WPF GUI — sortable results grid, live progress bar, configurable filters_
+<img width="2101" height="1221" alt="image" src="https://github.com/user-attachments/assets/0dc0c844-17ec-4444-87dc-5c5b21eeb8f9" />
 
 ---
 
