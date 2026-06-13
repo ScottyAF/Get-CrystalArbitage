@@ -599,7 +599,7 @@ $ScanScriptBlock = {
 
     # ── Step 3: Item names (parallel) ────────────────────────────────────
     Send-Progress 'names' 'Resolving item names...' 10
-    $nameResults = $chunks | ForEach-Object -ThrottleLimit 16 -Parallel {
+    $nameResults = $chunks | ForEach-Object -ThrottleLimit 32 -Parallel {
         $rowsCsv = $_ -join ','
         $map = @{}
         $url = 'https://v2.xivapi.com/api/sheet/Item?fields=Name&rows=' + $rowsCsv
@@ -640,7 +640,7 @@ $ScanScriptBlock = {
 
     # ── Step 4a: Aggregated DC data (parallel) ────────────────────────────
     Send-Progress 'agg' "Fetching aggregated data ($($chunks.Count) batches)..." 22
-    $aggResults = $chunks | ForEach-Object -ThrottleLimit 16 -Parallel {
+    $aggResults = $chunks | ForEach-Object -ThrottleLimit 32 -Parallel {
         $idStr = $_ -join ','
         $url   = 'https://universalis.app/api/v2/aggregated/Crystal/' + $idStr
         foreach ($attempt in 1..3) {
@@ -683,7 +683,7 @@ $ScanScriptBlock = {
     $env:_ArbitrageHomeWorld  = $HomeWorld
     $env:_ArbitragePriceBand  = "$PriceBandPct"
     $jobHomeWorld = $HomeWorld
-    $homeResults  = $chunks | ForEach-Object -ThrottleLimit 16 -Parallel {
+    $homeResults  = $chunks | ForEach-Object -ThrottleLimit 32 -Parallel {
         $baseUrl   = 'https://universalis.app/api/v2'
         $homeWorld = $env:_ArbitrageHomeWorld
         $idStr     = $_ -join ','
@@ -827,7 +827,7 @@ $ScanScriptBlock = {
     Send-Progress 'depth' "Fetching depth for $($depthChunks.Count) buy-world batches..." 66
 
     $jobPriceBandPct = $PriceBandPct
-    $depthResults = $depthChunks | ForEach-Object -ThrottleLimit 16 -Parallel {
+    $depthResults = $depthChunks | ForEach-Object -ThrottleLimit 32 -Parallel {
         $baseUrl      = 'https://universalis.app/api/v2'
         $worldName    = $_.World
         $idStr        = ($_.Ids | ForEach-Object { "$_" }) -join ','
